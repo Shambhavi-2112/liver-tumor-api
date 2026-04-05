@@ -34,6 +34,14 @@ class ConvTransposeBlock(nn.Module):
 
 
 class LiverAutoencoder(nn.Module):
+    """
+    Convolutional Autoencoder for liver CT anomaly detection.
+    Trained exclusively on normal slices; elevated reconstruction
+    error indicates a potential anomaly.
+    Input:  (B, 1, 128, 128)  -- single-channel grayscale CT slice
+    Output: (B, 1, 128, 128)  -- reconstructed slice
+    """
+
     def __init__(self, latent_dim: int = 256):
         super().__init__()
         self.latent_dim = latent_dim

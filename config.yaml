@@ -1,0 +1,11 @@
+data_root: "data"
+weights_output: "model/weights/liver_ae_weights.pth"
+
+num_epochs: 5
+batch_size: 32
+learning_rate: 0.001
+latent_dim: 256
+loss_alpha: 0.7
+
+num_workers: 2
+device: "cpu"

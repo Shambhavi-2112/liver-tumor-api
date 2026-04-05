@@ -17,7 +17,6 @@ logger = logging.getLogger(__name__)
 
 
 def ssim_loss(pred, target, window_size=11):
-    """Simplified single-scale SSIM loss (1 - SSIM)."""
     mu_x = F.avg_pool2d(pred, window_size, 1, window_size // 2)
     mu_y = F.avg_pool2d(target, window_size, 1, window_size // 2)
     mu_x_sq, mu_y_sq = mu_x ** 2, mu_y ** 2
